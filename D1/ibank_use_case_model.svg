@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400" height="900" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10" fill="none" stroke="#111" stroke-width="1.6"/>
+    </marker>
+    <marker id="openArrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10" fill="white" stroke="#111" stroke-width="1.6"/>
+    </marker>
+    <style>
+      .boundary { fill: #fff; stroke: #111; stroke-width: 2; }
+      .usecase { fill: #fff; stroke: #111; stroke-width: 2; }
+      .actor { stroke: #111; stroke-width: 2; fill: none; }
+      .assoc { stroke: #111; stroke-width: 1.7; fill: none; }
+      .rel { stroke: #111; stroke-width: 1.5; fill: none; stroke-dasharray: 7 5; marker-end: url(#openArrow); }
+      .label { font-family: Arial, Helvetica, sans-serif; font-size: 20px; fill: #111; }
+      .small { font-family: Arial, Helvetica, sans-serif; font-size: 17px; fill: #111; }
+      .tiny { font-family: Arial, Helvetica, sans-serif; font-size: 15px; fill: #111; }
+      .title { font-family: Arial, Helvetica, sans-serif; font-weight: bold; font-size: 26px; fill: #111; }
+    </style>
+  </defs>
+
+  <text x="700" y="45" text-anchor="middle" class="title">Use Case Model for iBank</text>
+
+  <!-- System boundary -->
+  <rect x="300" y="90" width="800" height="710" rx="8" class="boundary"/>
+  <text x="700" y="125" text-anchor="middle" class="title">iBank</text>
+  <text x="700" y="153" text-anchor="middle" class="small">Domestic, single-bank, on-premises campus ABM software</text>
+
+  <!-- Use cases -->
+  <ellipse cx="500" cy="240" rx="150" ry="45" class="usecase"/>
+  <text x="500" y="235" text-anchor="middle" class="label">Select Interface</text>
+  <text x="500" y="260" text-anchor="middle" class="label">Language</text>
+
+  <ellipse cx="820" cy="240" rx="150" ry="45" class="usecase"/>
+  <text x="820" y="247" text-anchor="middle" class="label">Authenticate User</text>
+
+  <ellipse cx="500" cy="390" rx="150" ry="45" class="usecase"/>
+  <text x="500" y="397" text-anchor="middle" class="label">Withdraw Cash</text>
+
+  <ellipse cx="820" cy="390" rx="150" ry="45" class="usecase"/>
+  <text x="820" y="397" text-anchor="middle" class="label">View Balance</text>
+
+  <ellipse cx="500" cy="540" rx="150" ry="45" class="usecase"/>
+  <text x="500" y="535" text-anchor="middle" class="label">Pay Concordia</text>
+  <text x="500" y="560" text-anchor="middle" class="label">Tuition / Fees</text>
+
+  <ellipse cx="820" cy="540" rx="150" ry="45" class="usecase"/>
+  <text x="820" y="547" text-anchor="middle" class="label">Generate Receipt</text>
+
+  <ellipse cx="660" cy="690" rx="160" ry="45" class="usecase"/>
+  <text x="660" y="697" text-anchor="middle" class="label">Cancel Transaction</text>
+
+  <!-- Actor: Concordia Bank Client -->
+  <circle cx="130" cy="325" r="22" class="actor"/>
+  <line x1="130" y1="347" x2="130" y2="420" class="actor"/>
+  <line x1="85" y1="375" x2="175" y2="375" class="actor"/>
+  <line x1="130" y1="420" x2="90" y2="485" class="actor"/>
+  <line x1="130" y1="420" x2="170" y2="485" class="actor"/>
+  <text x="130" y="520" text-anchor="middle" class="label">Concordia</text>
+  <text x="130" y="545" text-anchor="middle" class="label">Bank Client</text>
+
+  <!-- Actor: Bank Authorization System -->
+  <rect x="1160" y="205" width="180" height="105" rx="12" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="1250" y="245" text-anchor="middle" class="label">Bank</text>
+  <text x="1250" y="270" text-anchor="middle" class="label">Authorization</text>
+  <text x="1250" y="295" text-anchor="middle" class="label">System</text>
+
+  <!-- Actor: Concordia Tuition/Fee System -->
+  <rect x="1150" y="505" width="200" height="105" rx="12" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="1250" y="545" text-anchor="middle" class="label">Concordia</text>
+  <text x="1250" y="570" text-anchor="middle" class="label">Tuition / Fee</text>
+  <text x="1250" y="595" text-anchor="middle" class="label">System</text>
+
+  <!-- Associations from client -->
+  <line x1="178" y1="360" x2="360" y2="250" class="assoc"/>
+  <line x1="178" y1="380" x2="352" y2="390" class="assoc"/>
+  <line x1="178" y1="405" x2="675" y2="390" class="assoc"/>
+  <line x1="178" y1="430" x2="355" y2="540" class="assoc"/>
+  <line x1="178" y1="455" x2="505" y2="680" class="assoc"/>
+
+  <!-- Associations from supporting systems -->
+  <line x1="1160" y1="255" x2="970" y2="240" class="assoc"/>
+  <line x1="1160" y1="270" x2="970" y2="390" class="assoc"/>
+  <line x1="1160" y1="285" x2="960" y2="540" class="assoc"/>
+  <line x1="1150" y1="555" x2="650" y2="540" class="assoc"/>
+
+  <!-- Include relationships to Authenticate -->
+  <path d="M600,360 C665,315 710,285 760,265" class="rel"/>
+  <text x="650" y="310" text-anchor="middle" class="tiny">&lt;&lt;include&gt;&gt;</text>
+
+  <path d="M820,345 C820,320 820,300 820,285" class="rel"/>
+  <text x="885" y="320" text-anchor="middle" class="tiny">&lt;&lt;include&gt;&gt;</text>
+
+  <path d="M595,510 C675,430 740,330 795,285" class="rel"/>
+  <text x="705" y="430" text-anchor="middle" class="tiny">&lt;&lt;include&gt;&gt;</text>
+
+  <!-- Extend relationships from optional receipt to transactions.
+       Arrow points to base use case. -->
+  <path d="M735,515 C640,470 560,435 515,435" class="rel"/>
+  <text x="675" y="467" text-anchor="middle" class="tiny">&lt;&lt;extend&gt;&gt;</text>
+
+  <path d="M820,495 C820,470 820,450 820,435" class="rel"/>
+  <text x="885" y="468" text-anchor="middle" class="tiny">&lt;&lt;extend&gt;&gt;</text>
+
+  <path d="M670,540 C625,540 590,540 650,540" class="rel"/>
+  <text x="670" y="525" text-anchor="middle" class="tiny">&lt;&lt;extend&gt;&gt;</text>
+  <!-- The above receipt-to-payment line is visually too short; draw a clearer curve -->
+  <path d="M680,560 C620,575 580,570 620,555" class="rel" opacity="0"/>
+
+  <!-- Extend cancellation note and relationships -->
+  <path d="M615,650 C570,605 535,585 510,585" class="rel"/>
+  <text x="560" y="620" text-anchor="middle" class="tiny">&lt;&lt;extend&gt;&gt;</text>
+
+  <path d="M705,650 C760,610 800,585 815,585" class="rel"/>
+  <text x="770" y="620" text-anchor="middle" class="tiny">&lt;&lt;extend&gt;&gt;</text>
+
+  <path d="M660,645 C605,555 555,465 510,435" class="rel"/>
+  <text x="590" y="548" text-anchor="middle" class="tiny">&lt;&lt;extend&gt;&gt;</text>
+
+  <path d="M710,650 C770,555 810,470 820,435" class="rel"/>
+  <text x="805" y="545" text-anchor="middle" class="tiny">&lt;&lt;extend&gt;&gt;</text>
+
+  <!-- Notes -->
+  <rect x="330" y="735" width="740" height="45" rx="6" fill="#fff" stroke="#111" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <text x="700" y="762" text-anchor="middle" class="small">Assumption: Generate Receipt is optional; Cancel Transaction applies before final confirmation/completion.</text>
+</svg>
