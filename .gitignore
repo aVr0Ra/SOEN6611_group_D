@@ -1,1 +1,8 @@
-/.idea/
+.idea/
+*.iml
+target/
+out/
+*.class
+workspace.xml
+misc.xml
+.DS_Store
