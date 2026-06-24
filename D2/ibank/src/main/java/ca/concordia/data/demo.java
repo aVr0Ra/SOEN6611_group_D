@@ -22,9 +22,11 @@ public final class demo {
                 "Yi",
                 ""
         );
-        student.addAccount(50000, AccountType.CHEQUING);  // $500.00
-        student.addAccount(30000, AccountType.SAVINGS);   // $300.00
-        student.addAccount(150000, AccountType.TUITION);  // $1500.00 outstanding tuition
+        student.addAccount(50000, AccountType.CHEQUING);  // Chequing #1: $500.00
+        student.addAccount(25000, AccountType.CHEQUING);  // Chequing #2: $250.00
+        student.addAccount(30000, AccountType.SAVINGS);   // Savings #1: $300.00
+        student.addAccount(80000, AccountType.SAVINGS);   // Savings #2: $800.00
+        student.addAccount(150000, AccountType.TUITION);  // Tuition: $1500.00 outstanding
         database.addUser(student);
 
         // User 2: Daily limit test user
