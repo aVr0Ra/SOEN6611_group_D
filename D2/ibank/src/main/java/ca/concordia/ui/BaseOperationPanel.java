@@ -66,6 +66,8 @@ public abstract class BaseOperationPanel extends JPanel {
         btn.setFont(new Font("SansSerif", Font.BOLD, 14));
         btn.setBackground(new Color(30, 80, 160));
         btn.setForeground(Color.WHITE);
+        btn.setOpaque(true);
+        btn.setBorderPainted(false);
         btn.setFocusPainted(false);
         btn.setPreferredSize(new Dimension(260, 38));
         btn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));

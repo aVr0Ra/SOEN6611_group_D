@@ -85,6 +85,8 @@ public class LoginPanel extends JPanel {
         loginButton.setFont(new Font("SansSerif", Font.BOLD, 14));
         loginButton.setBackground(new Color(30, 80, 160));
         loginButton.setForeground(Color.WHITE);
+        loginButton.setOpaque(true);
+        loginButton.setBorderPainted(false);
         loginButton.setFocusPainted(false);
         loginButton.setPreferredSize(new Dimension(280, 40));
         loginButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
