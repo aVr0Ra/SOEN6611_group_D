@@ -82,11 +82,10 @@ public class WithdrawPanel extends BaseOperationPanel {
         }
 
         TransactionResult result = bankingService.withdraw(session, entry.getAccount().getAccountNumber(), cents);
-        showResult(result.isSuccess(), result.getMessage());
         if (result.isSuccess()) {
-            amountField.setText("");
             onSessionSet();
         }
+        showResult(result.isSuccess(), result.getMessage());
     }
 
     @Override

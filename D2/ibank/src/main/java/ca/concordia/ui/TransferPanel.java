@@ -102,11 +102,10 @@ public class TransferPanel extends BaseOperationPanel {
                 toEntry.getAccount().getAccountNumber(),
                 cents
         );
-        showResult(result.isSuccess(), result.getMessage());
         if (result.isSuccess()) {
-            amountField.setText("");
             onSessionSet();
         }
+        showResult(result.isSuccess(), result.getMessage());
     }
 
     @Override

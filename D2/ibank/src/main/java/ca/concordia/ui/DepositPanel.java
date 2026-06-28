@@ -82,11 +82,10 @@ public class DepositPanel extends BaseOperationPanel {
         }
 
         TransactionResult result = bankingService.deposit(session, entry.getAccount().getAccountNumber(), cents);
-        showResult(result.isSuccess(), result.getMessage());
         if (result.isSuccess()) {
-            amountField.setText("");
             onSessionSet();
         }
+        showResult(result.isSuccess(), result.getMessage());
     }
 
     @Override
