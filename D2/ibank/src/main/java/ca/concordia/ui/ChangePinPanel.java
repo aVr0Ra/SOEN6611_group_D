@@ -19,7 +19,7 @@ public class ChangePinPanel extends BaseOperationPanel {
     }
 
     private void buildUI() {
-        add(buildTopBar("Change PIN"), BorderLayout.NORTH);
+        add(buildTopBar("Change PIN/Changer le NIP"), BorderLayout.NORTH);
 
         JPanel form = new JPanel(new GridBagLayout());
         form.setBackground(new Color(245, 247, 250));
@@ -31,7 +31,7 @@ public class ChangePinPanel extends BaseOperationPanel {
         gbc.gridx = 0;
 
         gbc.gridy = 0;
-        form.add(makeLabel("Current PIN"), gbc);
+        form.add(makeLabel("Current PIN/NIP actuel"), gbc);
 
         oldPinField = new JPasswordField();
         oldPinField.setFont(new Font("SansSerif", Font.PLAIN, 14));
@@ -41,7 +41,7 @@ public class ChangePinPanel extends BaseOperationPanel {
 
         gbc.gridy = 2;
         gbc.insets = new Insets(14, 0, 6, 0);
-        form.add(makeLabel("New PIN"), gbc);
+        form.add(makeLabel("New PIN/Nouveau NIP"), gbc);
 
         newPinField = new JPasswordField();
         newPinField.setFont(new Font("SansSerif", Font.PLAIN, 14));
@@ -52,7 +52,7 @@ public class ChangePinPanel extends BaseOperationPanel {
 
         gbc.gridy = 4;
         gbc.insets = new Insets(14, 0, 6, 0);
-        form.add(makeLabel("Confirm New PIN"), gbc);
+        form.add(makeLabel("Confirm New PIN/Confirmer le nouveau NIP"), gbc);
 
         confirmPinField = new JPasswordField();
         confirmPinField.setFont(new Font("SansSerif", Font.PLAIN, 14));
@@ -61,7 +61,7 @@ public class ChangePinPanel extends BaseOperationPanel {
         gbc.insets = new Insets(0, 0, 6, 0);
         form.add(confirmPinField, gbc);
 
-        JButton changeBtn = makeActionButton("Change PIN");
+        JButton changeBtn = makeActionButton("Change PIN/Changer le NIP");
         gbc.gridy = 6;
         gbc.insets = new Insets(14, 0, 6, 0);
         form.add(changeBtn, gbc);
@@ -87,7 +87,7 @@ public class ChangePinPanel extends BaseOperationPanel {
         String confirmPin = new String(confirmPinField.getPassword());
 
         if (!newPin.equals(confirmPin)) {
-            showResult(false, "New PINs do not match.");
+            showResult(false, "New PINs do not match/Les nouveaux NIP ne correspondent pas.");
             newPinField.setText("");
             confirmPinField.setText("");
             return;

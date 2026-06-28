@@ -49,7 +49,7 @@ public class LoginPanel extends JPanel {
 
         gbc.insets = new Insets(6, 0, 2, 0);
 
-        JLabel cardLabel = new JLabel("Card Number");
+        JLabel cardLabel = new JLabel("Card Number/numéro de carte");
         cardLabel.setFont(new Font("SansSerif", Font.PLAIN, 13));
         gbc.gridy = 1;
         card.add(cardLabel, gbc);
@@ -60,7 +60,7 @@ public class LoginPanel extends JPanel {
         gbc.gridy = 2;
         card.add(cardNumberField, gbc);
 
-        JLabel pinLabel = new JLabel("PIN");
+        JLabel pinLabel = new JLabel("PIN/NIP");
         pinLabel.setFont(new Font("SansSerif", Font.PLAIN, 13));
         gbc.gridy = 3;
         gbc.insets = new Insets(14, 0, 2, 0);
@@ -81,7 +81,7 @@ public class LoginPanel extends JPanel {
         gbc.insets = new Insets(8, 0, 4, 0);
         card.add(errorLabel, gbc);
 
-        JButton loginButton = new JButton("Log In");
+        JButton loginButton = new JButton("Log In/Se Connecter");
         loginButton.setFont(new Font("SansSerif", Font.BOLD, 14));
         loginButton.setBackground(new Color(30, 80, 160));
         loginButton.setForeground(Color.WHITE);

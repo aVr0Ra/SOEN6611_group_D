@@ -17,7 +17,7 @@ public class WithdrawPanel extends BaseOperationPanel {
     }
 
     private void buildUI() {
-        add(buildTopBar("Withdraw Cash"), BorderLayout.NORTH);
+        add(buildTopBar("Withdraw Cash/Retrait d'argent"), BorderLayout.NORTH);
 
         JPanel form = new JPanel(new GridBagLayout());
         form.setBackground(new Color(245, 247, 250));
@@ -29,7 +29,7 @@ public class WithdrawPanel extends BaseOperationPanel {
         gbc.gridx = 0;
 
         gbc.gridy = 0;
-        form.add(makeLabel("Account"), gbc);
+        form.add(makeLabel("Account/Compte"), gbc);
 
         accountCombo = new JComboBox<>();
         accountCombo.setFont(new Font("SansSerif", Font.PLAIN, 13));
@@ -39,14 +39,14 @@ public class WithdrawPanel extends BaseOperationPanel {
 
         gbc.gridy = 2;
         gbc.insets = new Insets(14, 0, 6, 0);
-        form.add(makeLabel("Amount (multiples of $20)"), gbc);
+        form.add(makeLabel("Amount/Montant  (multiples of/de $20)"), gbc);
 
         amountField = makeTextField();
         gbc.gridy = 3;
         gbc.insets = new Insets(0, 0, 6, 0);
         form.add(amountField, gbc);
 
-        JButton withdrawBtn = makeActionButton("Withdraw");
+        JButton withdrawBtn = makeActionButton("Withdraw/Retirer");
         gbc.gridy = 4;
         gbc.insets = new Insets(14, 0, 6, 0);
         form.add(withdrawBtn, gbc);
@@ -67,7 +67,7 @@ public class WithdrawPanel extends BaseOperationPanel {
     private void doWithdraw() {
         AccountEntry entry = (AccountEntry) accountCombo.getSelectedItem();
         if (entry == null) {
-            showResult(false, "Please select an account.");
+            showResult(false, "Please select an account./Veuillez sélectionner un compte.");
             return;
         }
 
@@ -77,7 +77,7 @@ public class WithdrawPanel extends BaseOperationPanel {
             double dollars = Double.parseDouble(raw);
             cents = (int) Math.round(dollars * 100);
         } catch (NumberFormatException ex) {
-            showResult(false, "Please enter a valid amount.");
+            showResult(false, "Please enter a valid amount./Veuillez entrer un montant valide.");
             return;
         }
 

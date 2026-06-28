@@ -19,7 +19,7 @@ public class TransferPanel extends BaseOperationPanel {
     }
 
     private void buildUI() {
-        add(buildTopBar("Transfer Funds"), BorderLayout.NORTH);
+        add(buildTopBar("Transfer Funds/Virer des fonds"), BorderLayout.NORTH);
 
         JPanel form = new JPanel(new GridBagLayout());
         form.setBackground(new Color(245, 247, 250));
@@ -31,7 +31,7 @@ public class TransferPanel extends BaseOperationPanel {
         gbc.gridx = 0;
 
         gbc.gridy = 0;
-        form.add(makeLabel("From Account"), gbc);
+        form.add(makeLabel("From Account/Compte source"), gbc);
 
         accountCombo = new JComboBox<>();
         accountCombo.setFont(new Font("SansSerif", Font.PLAIN, 13));
@@ -41,7 +41,7 @@ public class TransferPanel extends BaseOperationPanel {
 
         gbc.gridy = 2;
         gbc.insets = new Insets(14, 0, 6, 0);
-        form.add(makeLabel("To Account"), gbc);
+        form.add(makeLabel("To Account/Compte destinataire"), gbc);
 
         toCombo = new JComboBox<>();
         toCombo.setFont(new Font("SansSerif", Font.PLAIN, 13));
@@ -52,14 +52,14 @@ public class TransferPanel extends BaseOperationPanel {
 
         gbc.gridy = 4;
         gbc.insets = new Insets(14, 0, 6, 0);
-        form.add(makeLabel("Amount ($)"), gbc);
+        form.add(makeLabel("Amount/Montant ($)"), gbc);
 
         amountField = makeTextField();
         gbc.gridy = 5;
         gbc.insets = new Insets(0, 0, 6, 0);
         form.add(amountField, gbc);
 
-        JButton transferBtn = makeActionButton("Transfer");
+        JButton transferBtn = makeActionButton("Transfer/Virer");
         gbc.gridy = 6;
         gbc.insets = new Insets(14, 0, 6, 0);
         form.add(transferBtn, gbc);
@@ -82,7 +82,7 @@ public class TransferPanel extends BaseOperationPanel {
         AccountEntry toEntry = (AccountEntry) toCombo.getSelectedItem();
 
         if (fromEntry == null || toEntry == null) {
-            showResult(false, "Please select both accounts.");
+            showResult(false, "Please select both accounts./Veuillez sélectionner les deux comptes.");
             return;
         }
 
@@ -92,7 +92,7 @@ public class TransferPanel extends BaseOperationPanel {
             double dollars = Double.parseDouble(raw);
             cents = (int) Math.round(dollars * 100);
         } catch (NumberFormatException ex) {
-            showResult(false, "Please enter a valid amount.");
+            showResult(false, "Please enter a valid amount./Veuillez entrer un montant valide.");
             return;
         }
 

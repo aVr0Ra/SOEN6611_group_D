@@ -65,6 +65,10 @@ public class ManualBankingServiceTest {
             printResult("6. Deposit $75.00 to savings #2",
                     bankingService.deposit(session, savingsAccount2, 7500));
 
+            System.out.println("==========EXTRA===========");
+            printResult("Withdraw $10000 from chequing #1",
+                    bankingService.withdraw(session, chequingAccount1, 1000000));
+
             printResult("7. Withdraw $40.00 from chequing #1",
                     bankingService.withdraw(session, chequingAccount1, 4000));
 
@@ -163,6 +167,28 @@ public class ManualBankingServiceTest {
 
             printResult("Insufficient funds test",
                     bankingService.withdraw(lowBalanceSession, lowBalanceChequing, 2000));
+
+            System.out.println("\n===== EXTRA ERROR TESTS =====");
+
+            try {
+                authenticationService.authenticateUser("", "1234");
+                System.out.println("ERROR: Empty card number should not login.");
+            } catch (AuthenticationException exception) {
+                System.out.println("Empty card number rejected as expected: " + exception.getMessage());
+            }
+
+            try {
+                authenticationService.authenticateUser("400000000001", "12ab");
+                System.out.println("ERROR: Invalid PIN format should not login.");
+            } catch (AuthenticationException exception) {
+                System.out.println("Invalid PIN format rejected as expected: " + exception.getMessage());
+            }
+
+            printResult("Transfer to same account",
+                    bankingService.transfer(newSession, chequingAccount1, chequingAccount1, 2000));
+
+            printResult("Account not found",
+                    bankingService.checkBalance(newSession, 9999));
 
         } catch (AuthenticationException exception) {
             System.out.println("Authentication failed: " + exception.getMessage());

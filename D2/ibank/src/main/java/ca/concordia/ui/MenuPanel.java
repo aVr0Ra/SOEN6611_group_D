@@ -47,9 +47,9 @@ public class MenuPanel extends JPanel {
         gbc.weighty = 1.0;
 
         String[][] buttons = {
-                {"Withdraw",        "Deposit"},
-                {"Transfer Funds",  "Balance Inquiry"},
-                {"Change PIN",      "Pay Tuition"},
+                {"Withdraw Cash / Retrait",              "Deposit / Dépôt"},
+                {"Transfer Funds / Virer des fonds",   "Balance Inquiry / Consultation du solde"},
+                {"Change PIN / Changer le NIP",          "Pay Tuition / Payer les frais de scolarité"},
         };
 
         String[][] panels = {
@@ -75,7 +75,7 @@ public class MenuPanel extends JPanel {
         bottomBar.setBackground(new Color(235, 238, 243));
         bottomBar.setBorder(new EmptyBorder(8, 16, 8, 16));
 
-        JButton logoutBtn = new JButton("Log Out");
+        JButton logoutBtn = new JButton("Log Out/Déconnexion");
         logoutBtn.setFont(new Font("SansSerif", Font.PLAIN, 13));
         logoutBtn.setForeground(new Color(160, 50, 50));
         logoutBtn.setBackground(Color.WHITE);
@@ -102,6 +102,6 @@ public class MenuPanel extends JPanel {
     }
 
     public void setSession(Session session) {
-        welcomeLabel.setText("Welcome, " + session.getUserName());
+        welcomeLabel.setText("Welcome/Bienvenue, " + session.getUserName());
     }
 }

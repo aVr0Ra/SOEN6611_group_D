@@ -35,7 +35,7 @@ public abstract class BaseOperationPanel extends JPanel {
         titleLabel.setForeground(Color.WHITE);
         topBar.add(titleLabel, BorderLayout.WEST);
 
-        JButton backBtn = new JButton("< Back");
+        JButton backBtn = new JButton("< Back/Retour");
         backBtn.setFont(new Font("SansSerif", Font.PLAIN, 13));
         backBtn.setForeground(Color.WHITE);
         backBtn.setBackground(new Color(30, 80, 160));

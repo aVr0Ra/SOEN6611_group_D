@@ -17,7 +17,7 @@ public class BalancePanel extends BaseOperationPanel {
     }
 
     private void buildUI() {
-        add(buildTopBar("Balance Inquiry"), BorderLayout.NORTH);
+        add(buildTopBar("Balance Inquiry/Consultation du solde"), BorderLayout.NORTH);
 
         JPanel form = new JPanel(new GridBagLayout());
         form.setBackground(new Color(245, 247, 250));
@@ -29,7 +29,7 @@ public class BalancePanel extends BaseOperationPanel {
         gbc.gridx = 0;
 
         gbc.gridy = 0;
-        form.add(makeLabel("Account"), gbc);
+        form.add(makeLabel("Account/Compte"), gbc);
 
         accountCombo = new JComboBox<>();
         accountCombo.setFont(new Font("SansSerif", Font.PLAIN, 13));
@@ -37,7 +37,7 @@ public class BalancePanel extends BaseOperationPanel {
         gbc.gridy = 1;
         form.add(accountCombo, gbc);
 
-        JButton checkBtn = makeActionButton("Check Balance");
+        JButton checkBtn = makeActionButton("Balance / Solde");
         gbc.gridy = 2;
         gbc.insets = new Insets(14, 0, 6, 0);
         form.add(checkBtn, gbc);
@@ -65,7 +65,7 @@ public class BalancePanel extends BaseOperationPanel {
     private void doCheckBalance() {
         AccountEntry entry = (AccountEntry) accountCombo.getSelectedItem();
         if (entry == null) {
-            showResult(false, "Please select an account.");
+            showResult(false, "Select an account/Sélectionner un compte");
             return;
         }
 

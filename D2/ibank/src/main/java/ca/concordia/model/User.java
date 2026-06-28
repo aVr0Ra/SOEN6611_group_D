@@ -45,6 +45,9 @@ public class User {
         if (newPin == null || !newPin.matches("\\d{4}")) {
             return false;
         }
+        if (newPin.equals(oldPin)) {
+            return false;
+        }
         this.pin = newPin;
         return true;
     }
@@ -89,7 +92,7 @@ public class User {
     }
     public void addDailyTotal(int amount) throws DailyLimitExceededException {
         if (this.dailyTotal + amount > this.dailyLimit) {
-            throw new DailyLimitExceededException("Daily limit exceeded.");
+            throw new DailyLimitExceededException("Daily limit exceeded./Limite quotidienne dépassée.");
         }
         this.dailyTotal += amount;
     }

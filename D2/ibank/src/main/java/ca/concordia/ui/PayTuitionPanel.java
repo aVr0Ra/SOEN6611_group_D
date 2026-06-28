@@ -22,7 +22,7 @@ public class PayTuitionPanel extends BaseOperationPanel {
     }
 
     private void buildUI() {
-        add(buildTopBar("Pay Tuition"), BorderLayout.NORTH);
+        add(buildTopBar("Pay Tuition/Payer les frais de scolarité"), BorderLayout.NORTH);
 
         JPanel form = new JPanel(new GridBagLayout());
         form.setBackground(new Color(245, 247, 250));
@@ -34,7 +34,7 @@ public class PayTuitionPanel extends BaseOperationPanel {
         gbc.gridx = 0;
 
         gbc.gridy = 0;
-        form.add(makeLabel("Pay From (Chequing / Savings)"), gbc);
+        form.add(makeLabel("Pay From/Payer à partir de (Chequing / Savings)"), gbc);
 
         accountCombo = new JComboBox<>();
         accountCombo.setFont(new Font("SansSerif", Font.PLAIN, 13));
@@ -44,7 +44,7 @@ public class PayTuitionPanel extends BaseOperationPanel {
 
         gbc.gridy = 2;
         gbc.insets = new Insets(14, 0, 6, 0);
-        form.add(makeLabel("Tuition Account"), gbc);
+        form.add(makeLabel("Tuition Account/Compte de frais de scolarité"), gbc);
 
         tuitionCombo = new JComboBox<>();
         tuitionCombo.setFont(new Font("SansSerif", Font.PLAIN, 13));
@@ -55,14 +55,14 @@ public class PayTuitionPanel extends BaseOperationPanel {
 
         gbc.gridy = 4;
         gbc.insets = new Insets(14, 0, 6, 0);
-        form.add(makeLabel("Amount ($)"), gbc);
+        form.add(makeLabel("Amount/Montant ($)"), gbc);
 
         amountField = makeTextField();
         gbc.gridy = 5;
         gbc.insets = new Insets(0, 0, 6, 0);
         form.add(amountField, gbc);
 
-        JButton payBtn = makeActionButton("Pay Tuition");
+        JButton payBtn = makeActionButton("Pay Tuition/Payer les frais de scolarité");
         gbc.gridy = 6;
         gbc.insets = new Insets(14, 0, 6, 0);
         form.add(payBtn, gbc);
@@ -85,7 +85,7 @@ public class PayTuitionPanel extends BaseOperationPanel {
         AccountEntry tuitionEntry = (AccountEntry) tuitionCombo.getSelectedItem();
 
         if (fromEntry == null || tuitionEntry == null) {
-            showResult(false, "Please select both accounts.");
+            showResult(false, "Please select both accounts./Veuillez sélectionner les deux comptes.");
             return;
         }
 
@@ -95,7 +95,7 @@ public class PayTuitionPanel extends BaseOperationPanel {
             double dollars = Double.parseDouble(raw);
             cents = (int) Math.round(dollars * 100);
         } catch (NumberFormatException ex) {
-            showResult(false, "Please enter a valid amount.");
+            showResult(false, "Please enter a valid amount./Veuillez entrer un montant valide.");
             return;
         }
 

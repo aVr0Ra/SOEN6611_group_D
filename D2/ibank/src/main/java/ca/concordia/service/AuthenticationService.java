@@ -36,15 +36,15 @@ public class AuthenticationService {
      * */
     public Session authenticateUser(String cardNumber, String pin) throws AuthenticationException {
         if (cardNumber == null || cardNumber.isBlank()) {
-            throw new AuthenticationException("Card number cannot be empty.");
+            throw new AuthenticationException("Card number cannot be empty/Le numéro de carte ne peut pas être vide.");
         }
         if (pin == null || !pin.matches("\\d{4}")) {
-            throw new AuthenticationException("PIN must be exactly 4 digits.");
+            throw new AuthenticationException("PIN must be exactly 4 digits/Le NIP doit contenir exactement 4 chiffres.");
         }
 
         User user = userDatabase.findUserByCardNumber(cardNumber);
         if (user == null || !user.checkPin(pin)) {
-            throw new AuthenticationException("Invalid card number or PIN.");
+            throw new AuthenticationException("Invalid card number or PIN/Numéro de carte ou NIP invalide.");
         }
         return new Session(user.getCardNumber(), user.getName());
     }

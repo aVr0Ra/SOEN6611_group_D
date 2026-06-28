@@ -23,7 +23,7 @@ public class Account {
     }
     public void setBalance(int balance) throws BalanceException {
         if (balance < 0) {
-            throw new BalanceException("Balance cannot be negative.");
+            throw new BalanceException("Balance cannot be negative./Le solde ne peut pas être négatif.");
         }
         this.balance = balance;
     }
@@ -33,16 +33,16 @@ public class Account {
     }
     public void deposit(int amount) throws BalanceException {
         if (amount <= 0) {
-            throw new BalanceException("Deposit amount must be positive.");
+            throw new BalanceException("Deposit amount must be positive/Le montant du dépôt doit être positif.");
         }
         balance += amount;
     }
     public void withdraw(int amount) throws BalanceException{
         if (amount <= 0) {
-            throw new BalanceException("Withdrawal amount must be positive.");
+            throw new BalanceException("Withdrawal amount must be positive/Le montant du retrait doit être positif.");
         }
         if (amount > balance) {
-            throw new BalanceException("Insufficient funds.");
+            throw new BalanceException("Insufficient funds/Fonds insuffisants.");
         }
         balance -= amount;
     }

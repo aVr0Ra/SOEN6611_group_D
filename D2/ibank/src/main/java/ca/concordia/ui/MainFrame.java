@@ -31,8 +31,8 @@ public class MainFrame extends JFrame {
         this.bankingService = bankingService;
 
         setTitle("iBank — Concordia University");
-        setSize(520, 480);
-        setMinimumSize(new Dimension(480, 420));
+        setSize(1000, 650);
+        setMinimumSize(new Dimension(1000, 650));
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
