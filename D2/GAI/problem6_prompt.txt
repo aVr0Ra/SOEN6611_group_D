@@ -1,0 +1,15 @@
+Context: We are working on Problem 6 of Deliverable 2 for the SOEN 6611 Software Measurement project. We need to evaluate the readability or understandability of the iBank Java source code.
+
+Audience: The output is for a university-level software measurement presentation to the course instructor and teaching assistant.
+
+Scope: Focus on selecting one source code readability metric, rationalizing its selection, applying it to iBank, and explaining the qualitative meaning of the result.
+
+Task: Recommend an authoritative source code readability or understandability metric for a Java object-oriented application. Compare possible options briefly and explain which metric is most suitable for iBank.
+
+Restrictions: The source of the metric must be authoritative. The metric should be applicable to Java source code and should provide meaningful thresholds or interpretation. Avoid natural-language readability metrics unless they can be clearly justified for source code.
+
+Output: Provide the recommended metric, rationale for selection, authoritative source to cite, calculation method, threshold interpretation, and slide-ready explanation.
+
+Facts: iBank is implemented in Java using Swing. It contains GUI panels, service classes, model classes, and representative demo data. The source code aims for readability, understandability, and maintainability.
+
+Follow-up: After recommending the metric, help create presentation slides explaining the metric, calculation results, and qualitative conclusion for iBank.

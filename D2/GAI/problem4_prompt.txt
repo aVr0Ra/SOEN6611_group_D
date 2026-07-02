@@ -1,0 +1,15 @@
+Context: We are working on Deliverable 2 of the SOEN 6611 Software Measurement project. Our system is iBank Concordia, a simulated bilingual campus Automated Banking Machine for Concordia University users in Montreal, Quebec, Canada.
+
+Audience: The output is for a university-level software measurement presentation to the course instructor and teaching assistant.
+
+Scope: Focus on Problem 4, which requires implementing iBank in Java and testing it using representative data. The system should support authentication, withdrawal, deposit, transfer, balance inquiry, PIN change, and tuition payment.
+
+Task: Help us design a suitable object-oriented implementation model and architecture for iBank. Include GUI structure, service logic, model classes, data storage, exception handling, and representative test data.
+
+Restrictions: The system must use Java with a GUI, preferably Java Swing or JavaFX. Avoid unnecessary complexity. Separate GUI code from banking logic. Include helpful error messages for exceptional cases. The design should aim for usability, readability, understandability, and maintainability.
+
+Output: Provide a structured implementation plan with proposed packages, classes, responsibilities, data flow, and representative test scenarios.
+
+Facts: iBank is a bilingual English/French campus ABM. It should support regular banking operations and tuition payment. It should use representative users and accounts to test normal, boundary, and exceptional cases.
+
+Follow-up: After giving the implementation plan, suggest how the architecture could be shown in a slide-friendly component and data flow diagram.
